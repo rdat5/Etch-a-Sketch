@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector('.grid-container');
+const clearCanvasBtn = document.querySelector('#clear-canvas');
 const defaultBGColor = "white";
 
 const rows = 48;
@@ -19,6 +20,7 @@ for (let i = 0; i < rows; i++)
     for (let j = 0; j < cols; j++)
     {
         const cel = document.createElement('div');
+        cel.setAttribute('class', 'cel');
         cel.style.backgroundColor = defaultBGColor;
         cel.style.border = "1px solid black";
         cel.style.flex = "auto";
@@ -27,3 +29,14 @@ for (let i = 0; i < rows; i++)
     }
     gridContainer.appendChild(row);
 }
+
+function test()
+{
+    let allCels = document.querySelectorAll('.cel');
+    allCels.forEach(
+        (cel) => {
+            changeColor(cel, defaultBGColor);
+        });
+}
+
+clearCanvasBtn.addEventListener('click', test);
