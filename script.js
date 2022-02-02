@@ -3,6 +3,11 @@ const gridContainer = document.querySelector('.grid-container');
 const rows = 16;
 const cols = 16;
 
+function changeColor(cel)
+{
+    cel.style.backgroundColor = "black";
+}
+
 for (let i = 0; i < rows; i++)
 {
     const row = document.createElement('div');
@@ -18,6 +23,7 @@ for (let i = 0; i < rows; i++)
         cel.style.border = "1px solid black";
         cel.style.borderRadius = "4px";
         row.appendChild(cel);
+        cel.onmouseenter = () => changeColor(cel);
     }
     gridContainer.appendChild(row);
 }
