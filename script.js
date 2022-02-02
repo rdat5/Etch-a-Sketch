@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector('.grid-container');
+const defaultBGColor = "white";
 
 const rows = 48;
 const cols = 48;
@@ -18,7 +19,7 @@ for (let i = 0; i < rows; i++)
     for (let j = 0; j < cols; j++)
     {
         const cel = document.createElement('div');
-        cel.style.backgroundColor = "lightblue";
+        cel.style.backgroundColor = defaultBGColor;
         cel.style.border = "1px solid black";
         cel.style.flex = "auto";
         row.appendChild(cel);
