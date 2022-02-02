@@ -20,7 +20,6 @@ for (let i = 0; i < rows; i++)
         const cel = document.createElement('div');
         cel.style.backgroundColor = "lightblue";
         cel.style.border = "1px solid black";
-        // cel.style.borderRadius = "0";
         cel.style.flex = "auto";
         row.appendChild(cel);
         cel.onmouseenter = () => changeColor(cel);
