@@ -18,6 +18,7 @@ function setCanvas()
     for (let i = 0; i < rows; i++)
     {
         const row = document.createElement('div');
+        row.setAttribute('class', 'row');
         row.style.display = "flex";
         row.style.flexDirection = "column";
         row.style.gap = "0";
@@ -36,11 +37,16 @@ function setCanvas()
     }
 }
 
+function resetCanvas()
+{
+    let allRows = document.querySelectorAll('.row');
+    allRows.forEach((row) => {
+        gridContainer.removeChild(row);
+    });
+}
+
 function clearCanvas()
 {
-    let allCels = document.querySelectorAll('.cel');
-    allCels.forEach(
-        (cel) => {
-            changeColor(cel, defaultBGColor);
-        });
+    resetCanvas();
+    setCanvas();
 }
