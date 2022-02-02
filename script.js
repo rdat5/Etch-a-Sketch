@@ -5,6 +5,9 @@ const defaultBGColor = "white";
 const rows = 16;
 const cols = 16;
 
+clearCanvasBtn.addEventListener('click', test);
+setCanvas();
+
 function changeColor(cel, color)
 {
     cel.style.backgroundColor = color;
@@ -41,6 +44,3 @@ function test()
             changeColor(cel, defaultBGColor);
         });
 }
-
-clearCanvasBtn.addEventListener('click', test);
-setCanvas();
