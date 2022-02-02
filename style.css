@@ -1,4 +1,6 @@
 .grid-container {
     display: flex;
     gap: 0;
+    width: 960px;
+    height: 960px;
 }

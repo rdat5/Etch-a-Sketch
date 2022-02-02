@@ -1,7 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 
-const rows = 16;
-const cols = 16;
+const rows = 48;
+const cols = 48;
 
 function changeColor(cel)
 {
@@ -14,14 +14,14 @@ for (let i = 0; i < rows; i++)
     row.style.display = "flex";
     row.style.flexDirection = "column";
     row.style.gap = "0";
+    row.style.flex = "auto";
     for (let j = 0; j < cols; j++)
     {
         const cel = document.createElement('div');
-        cel.style.width = '24px';
-        cel.style.height = '24px';
         cel.style.backgroundColor = "lightblue";
         cel.style.border = "1px solid black";
         cel.style.borderRadius = "4px";
+        cel.style.flex = "auto";
         row.appendChild(cel);
         cel.onmouseenter = () => changeColor(cel);
     }
