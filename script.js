@@ -2,8 +2,8 @@ const gridContainer = document.querySelector('.grid-container');
 const clearCanvasBtn = document.querySelector('#clear-canvas');
 const defaultBGColor = "white";
 
-const rows = 16;
-const cols = 16;
+let rows = 16;
+let cols = 16;
 
 clearCanvasBtn.addEventListener('click', clearCanvas);
 setCanvas();
@@ -45,8 +45,24 @@ function resetCanvas()
     });
 }
 
+function promptNewCanvasSize()
+{
+    let newGridSize = prompt("Enter a new grid size (0 - 100)");
+    if (newGridSize < 0)
+    {
+        newGridSize = 0;
+    }
+    else if (newGridSize > 100)
+    {
+        newGridSize = 100;
+    }
+    rows = newGridSize;
+    cols = newGridSize;
+}
+
 function clearCanvas()
 {
     resetCanvas();
+    promptNewCanvasSize();
     setCanvas();
 }
