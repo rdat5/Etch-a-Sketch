@@ -5,7 +5,7 @@ const defaultBGColor = "white";
 const rows = 16;
 const cols = 16;
 
-clearCanvasBtn.addEventListener('click', test);
+clearCanvasBtn.addEventListener('click', clearCanvas);
 setCanvas();
 
 function changeColor(cel, color)
@@ -36,7 +36,7 @@ function setCanvas()
     }
 }
 
-function test()
+function clearCanvas()
 {
     let allCels = document.querySelectorAll('.cel');
     allCels.forEach(
