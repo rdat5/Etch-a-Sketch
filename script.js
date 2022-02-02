@@ -2,32 +2,35 @@ const gridContainer = document.querySelector('.grid-container');
 const clearCanvasBtn = document.querySelector('#clear-canvas');
 const defaultBGColor = "white";
 
-const rows = 48;
-const cols = 48;
+const rows = 16;
+const cols = 16;
 
 function changeColor(cel, color)
 {
     cel.style.backgroundColor = color;
 }
 
-for (let i = 0; i < rows; i++)
+function setCanvas()
 {
-    const row = document.createElement('div');
-    row.style.display = "flex";
-    row.style.flexDirection = "column";
-    row.style.gap = "0";
-    row.style.flex = "auto";
-    for (let j = 0; j < cols; j++)
+    for (let i = 0; i < rows; i++)
     {
-        const cel = document.createElement('div');
-        cel.setAttribute('class', 'cel');
-        cel.style.backgroundColor = defaultBGColor;
-        cel.style.border = "1px solid black";
-        cel.style.flex = "auto";
-        row.appendChild(cel);
-        cel.onmouseenter = () => changeColor(cel, "blue");
+        const row = document.createElement('div');
+        row.style.display = "flex";
+        row.style.flexDirection = "column";
+        row.style.gap = "0";
+        row.style.flex = "auto";
+        for (let j = 0; j < cols; j++)
+        {
+            const cel = document.createElement('div');
+            cel.setAttribute('class', 'cel');
+            cel.style.backgroundColor = defaultBGColor;
+            cel.style.border = "1px solid black";
+            cel.style.flex = "auto";
+            row.appendChild(cel);
+            cel.onmouseenter = () => changeColor(cel, "blue");
+        }
+        gridContainer.appendChild(row);
     }
-    gridContainer.appendChild(row);
 }
 
 function test()
@@ -40,3 +43,4 @@ function test()
 }
 
 clearCanvasBtn.addEventListener('click', test);
+setCanvas();
