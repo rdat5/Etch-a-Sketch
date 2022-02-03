@@ -1,3 +1,15 @@
+.content {
+    display: flex;
+}
+
+.content .input {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 12px;
+    align-items: center;
+}
+
 .grid-container {
     display: flex;
     gap: 0;
