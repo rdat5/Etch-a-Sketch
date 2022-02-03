@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const clearCanvasBtn = document.querySelector('#clear-canvas');
+const pickedColor = document.querySelector('#color-picker')
 const defaultBGColor = "white";
 
 let rows = 16;
@@ -31,7 +32,7 @@ function setCanvas()
             cel.style.border = "1px solid black";
             cel.style.flex = "auto";
             row.appendChild(cel);
-            cel.onmouseenter = () => changeColor(cel, "blue");
+            cel.onmouseenter = () => changeColor(cel, pickedColor.value);
         }
         gridContainer.appendChild(row);
     }
