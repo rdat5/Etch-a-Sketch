@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const clearCanvasBtn = document.querySelector('#clear-canvas');
-const pickedColor = document.querySelector('#color-picker')
+const pickedColor = document.querySelector('#color-picker');
 const defaultBGColor = "white";
 const isRandom = document.querySelector('#is-random-rgb');
 
