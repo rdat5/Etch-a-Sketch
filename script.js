@@ -2,6 +2,7 @@ const gridContainer = document.querySelector('.grid-container');
 const clearCanvasBtn = document.querySelector('#clear-canvas');
 const pickedColor = document.querySelector('#color-picker')
 const defaultBGColor = "white";
+const isRandom = document.querySelector('#is-random-rgb');
 
 let rows = 16;
 let cols = 16;
@@ -9,9 +10,26 @@ let cols = 16;
 clearCanvasBtn.addEventListener('click', clearCanvas);
 setCanvas();
 
+function getRandomColor()
+{
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 function changeColor(cel, color)
 {
-    cel.style.backgroundColor = color;
+    if (!isRandom.checked)
+    {
+        cel.style.backgroundColor = color;
+    }
+    else
+    {
+        cel.style.backgroundColor = getRandomColor();
+    }
 }
 
 function setCanvas()
